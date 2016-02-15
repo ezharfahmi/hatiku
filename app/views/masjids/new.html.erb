@@ -1,0 +1,33 @@
+<div class="content">
+    <div class="form-basic">
+        <div class="form-title-row">
+            <h1>Program Ceramah Form</h1>
+        </div>
+        <%= form_for @program do |f| %>
+            <br>
+            <div class="field">
+              <%= f.label :nama_penceramah %><br>
+              <%= f.text_field :npenceramah %><br><br><br>
+            </div>
+            <div class="field">
+              <%= f.label :tajuk %><br>
+              <%= f.text_field :tajuk %><br><br><br>
+            </div>
+              <div class="field">
+              <%= f.label :kitab %><br>
+              <%= f.select(:kitab, options_for_select([['Tauhid','Tauhid'], ['Aqidah','Aqidah'], ['Feqah','Feqah'], ['Tasauf','Tasauf'], ['Hadith/Sirah','Hadith/Sirah'], ['Tafsir Quran', 'Tafsir Quran'], ['Umum','Umum']]))  %><br><br><br>
+            </div>
+            <div class="field">
+              <%= f.label :tarikh %><br>
+              <%= f.text_field :tarikh, id: "program_masjid_tarikh" %><br><br><br>
+            </div>
+            <br>
+            <br>
+
+            <%= f.hidden_field :lokasi, :value => current_user.name%>
+            <div class="actions">
+              <%= f.submit "Add program" %>
+            </div>
+        <% end %>
+    </div>
+</div> 

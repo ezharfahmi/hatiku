@@ -1,0 +1,22 @@
+<div class="content">
+	<div class="form-basic">
+        <div class="form-title-row">
+            <h1>Tajuk : <%= @program.tajuk %></h1><br><br>
+            by <%= @program.npenceramah %>
+        </div>
+        <p>Lokasi : <%= @program.location %></p>
+		<p>Kitab : <%= @program.kitab %></p>
+		<p>Tarikh : <%= @program.tarikh %></p>
+		
+		<% if can? :edit, Masjid %>
+			<div class="action">
+				<center><%= link_to button_tag("Edit Program"), edit_masjid_path(@program) %></center>
+			</div>
+		<% end %>
+		<% if can? :destroy, Masjid %>
+			<div class="action">
+				<center><%= link_to button_tag("Delete Program"), masjid_path(@program), method: :delete, data: { confirm: 'Are you sure?' }  %></center>
+			</div>
+		<% end %>
+	</div>
+</div>

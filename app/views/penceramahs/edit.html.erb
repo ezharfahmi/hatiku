@@ -1,0 +1,40 @@
+<div class="content">
+    <div class="form-basic">
+        <div class="form-title-row">
+            <h1>Edit Program Ceramah Form</h1>
+        </div>
+        <%= form_for @program_penceramah do |f| %>
+            <br>
+            <div class="field">
+              <%= f.label :tajuk_ceramah %><br>
+              <%= f.text_field :tajuk %><br><br><br>
+            </div>
+            <div class="field">
+              <%= f.label :lokasi %><br>
+              <%= f.text_field :location %><br><br><br>
+            </div>
+              <div class="field">
+              <%= f.label :kitab %><br>
+              <%= f.select(:kitab, options_for_select([['Tauhid','Tauhid'], ['Aqidah','Aqidah'], ['Feqah','Feqah'], ['Tasauf','Tasauf'], ['Hadith/Sirah','Hadith/Sirah'], ['Tafsir Quran', 'Tafsir Quran'], ['Umum','Umum']]))  %><br><br><br>
+            </div>
+            <div class="field">
+              <%= f.label :tarikh %><br>
+              <%= f.text_field :tarikh, id: "program_masjid_tarikh" %><br><br><br>
+            </div>
+            <div class="field">
+              <%= f.label :masa_bermula %><br>
+              <%= f.time_field :start_time %><br><br><br>
+            </div>
+            <div class="field">
+              <%= f.label :masa_berakhir %><br>
+              <%= f.time_field :end_time %><br><br><br>
+            </div>
+            <br>
+            <br>
+            <div class="actions">
+              <%= f.submit "Edit program" %>
+            </div>
+        <% end %>
+    </div>
+</div> 
+

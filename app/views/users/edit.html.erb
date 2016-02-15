@@ -1,0 +1,28 @@
+<div class="content">
+	<div class="form-basic">
+		<div class="form-title-row">
+			<h1>Update Your Profile</h1>
+		</div>
+		<%= form_for @user, :html => {:multipart => true}  do|f| %>
+
+			<div class="field">    
+				<%= f.label :name %><br />
+				<%= f.text_field :name, autofocus: true,  :required => true  %>
+				<br><br>
+			</div>	
+			<% if current_user.roles_mask == 4 %>
+				<%= f.label :date_of_birth %><br />
+				<%= f.date_select :dob, start_year: 1995 %>
+			<% end %>
+			<br>
+			<br>
+
+			<center>
+				<%= f.label :profile_picture %><br />
+				<%= f.file_field :image %><br>
+			</center>
+
+			<p><%= f.submit %></p>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="content">
+	<div class="form-basic">
+        <div class="form-title-row">
+            <h1>Tajuk : <%= @program_penceramah.tajuk %></h1><br><br>
+            by <%= @program_penceramah.npenceramah %>
+        </div>
+		<p>Kitab : <%= @program_penceramah.kitab %></p>
+		<p>Lokasi : <%= @program_penceramah.location %></p>
+		<p>Tarikh : <%= @program_penceramah.tarikh %></p>
+		<p>Masa Bermula : <%= @program_penceramah.start_time.strftime("%I:%M%p") %></p>
+		<p>Masa Tamat : <%= @program_penceramah.end_time.strftime("%I:%M%p") %></p>
+		<% if can? :edit, Penceramah %>
+			<div class="action">
+				<center><%= link_to button_tag("Edit Program"), edit_penceramah_path(@program_penceramah) %></center>
+			</div>
+		<% end %>
+		<% if can? :destroy, Penceramah %>
+			<div class="action">
+				<center><%= link_to button_tag("Delete Program"), penceramah_path(@program_penceramah), method: :delete, data: { confirm: 'Are you sure?' }  %></center>
+			</div>
+		<% end %>
+	</div>
+</div>

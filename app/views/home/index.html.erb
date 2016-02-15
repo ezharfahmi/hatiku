@@ -1,0 +1,202 @@
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item">
+          <img class="first-slide" src="assets/bg4.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Add A Ceramah or Event</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p>
+                <% if can? :create, Penceramah %>
+                     <li><%= link_to "Add a program", new_penceramah_path, class: "btn btn-lg btn-primary" %></li>
+                <% elsif can? :create, Masjid %>
+                    <li><%= link_to "Add a program", new_masjid_path, class: "btn btn-lg btn-primary" %></li>
+                <% else %>
+                    <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/examples/carousel/#" role="button">Learn more</a></p>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="assets/bg5.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Add A Ceramah or Event</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p>
+                <% if can? :create, Penceramah %>
+                     <li><%= link_to "Add a program", new_penceramah_path, class: "btn btn-lg btn-primary" %></li>
+                <% elsif can? :create, Masjid %>
+                    <li><%= link_to "Add a program", new_masjid_path, class: "btn btn-lg btn-primary" %></li>
+                <% else %>
+                    <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/examples/carousel/#" role="button">Learn more</a></p>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item active">
+          <img class="third-slide" src="assets/bg6.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Add A Ceramah or Event</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p>
+                <% if can? :create, Penceramah %>
+                     <li><%= link_to "Add a program", new_penceramah_path, class: "btn btn-lg btn-primary" %></li>
+                <% elsif can? :create, Masjid %>
+                    <li><%= link_to "Add a program", new_masjid_path, class: "btn btn-lg btn-primary" %></li>
+                <% else %>
+                    <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/examples/carousel/#" role="button">Learn more</a></p>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Welcome to Hatiku.
+                </h1>
+            </div>
+            <% if user_signed_in? %>
+                <div id="latest">
+                    <%= render partial: 'home' %>
+                </div>
+            <% else %>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4><i class="glyphicon glyphicon-ok-circle"></i> Penceramah User</h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>Penceramah-penceramah boleh memasukkan sebarang jadual ke dalam profile mereka untuk notify pengguna2 islam yang melayari website ini.</p>
+                            <a href="#" class="btn btn-default">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4><i class="glyphicon glyphicon-search"></i> Masjid User</h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>Masjid-masjid boleh memasukkan sebarang info atau aktiviti tentang masjid yg akan dijalankan. Admin masjid juga meletakkan sebarang fasiliti.</p>
+                            <a href="#" class="btn btn-default">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4><i class="glyphicon glyphicon-new-window"></i> Public User</h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>Pengguna boleh mengetahui masjid2 yg terdekat, apa2 aktiviti, ceramah yg bakal berlangsung di masjid terdekat. </p>
+                            <a href="#" class="btn btn-default">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Section -->
+        <div class="container-fluid">
+            <div class="row text-center">
+                <h3 class="headermessage">Masjid-masjid</h3>
+            </div>
+            <div class="row">
+                <div class="image-block col-sm-4" style="background: url(assets/mj1.jpg) no-repeat center top;background-size:cover;">
+                    <p> Abdul Rahman Mosque </p>
+                </div>
+                <div class="image-block col-sm-8" style="background: url(assets/mj4.jpg) no-repeat center top;background-size:cover;">
+                    <p> Et'hem Bey Mosque </p>
+                </div>
+                <div class="image-block col-sm-4" style="background: url(assets/mj2.jpg) no-repeat center top;background-size:cover;">
+                    <p> Blue Mosque </p>
+                </div>
+                <div class="image-block col-sm-4" style="background: url(assets/mj3.jpg) no-repeat center top;background-size:cover;">
+                    <p> Auburn Gallipoli Mosque </p>
+                </div>
+                <div class="image-block col-sm-4" style="background: url(assets/mj5.jpg) no-repeat center top;background-size:cover;">
+                    <p> Al Fateh Mosque </p>
+                </div>
+                <div class="image-block col-sm-8" style="background: url(assets/mj7.jpg) no-repeat center top;background-size:cover;">
+                    <p> Karadzozbey Mosque </p>
+                </div>
+                <div class="image-block col-sm-4" style="background: url(assets/mj6.jpg) no-repeat center top;background-size:cover;">
+                    <p> Mesquita Foz do Iguaçu </p>            
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Features Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Objective of Hatiku.</h2>
+            </div>
+            <div class="col-md-6">
+                <p>The Objectives of Hatiku includes:</p>
+                <ul>
+                    <li><strong>Ukhwah Islamiah</strong></li>
+                    <li>Masjid is a learning institution</li>
+                    <li>Should not be limited to purely religious activities</li>
+                    <li>As a centre of muslim activities for community and social gathering events</li>
+                    <li>To ease all muslim on finding any ceramah</li>
+                    <li>Helping all muslim on making them keeping up with any news about islam</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="assets/thumb.jpg" alt="">
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Section -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+                </div>
+                <div class="col-md-4">
+                    <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+  

@@ -1,0 +1,17 @@
+<div class="content">
+    <div class="form-basic">
+        <div class="form-title-row">
+            <h1>Search Result</h1>
+        </div>
+        <br>
+		<% @program.each do |prog| %>
+			<p><%= link_to prog.tajuk, prog %> by <%= prog.npenceramah%></p>
+			<br>
+		<% end %>
+		<br>
+        <div class="digg_pagination">
+        	<%= will_paginate @program %>
+        </div>
+
+	</div>
+</div>

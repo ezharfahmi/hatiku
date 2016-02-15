@@ -1,0 +1,39 @@
+<div class="content">
+    <div class="form-basic">
+        <div class="form-title-row">
+            <h1>Advanced Search</h1>
+        </div>
+		<%= form_for @search, html: {class: "pure-form"} do |s| %>
+
+		  <div class="field">
+		    <%= s.label :Nama_penceramah %><br />
+		    <%= s.text_field :npenceramah %><br><br><br>
+		  </div>
+
+		  <div class="field">
+		    <%= s.label :tajuk %><br />
+		    <%= s.text_field :tajuk %><br><br><br>
+		  </div>
+		  
+          <div class="field">
+            <%= s.label :kitab %><br>
+            <%= s.select(:kitab, options_for_select([['',''],['Tauhid','Tauhid'], ['Aqidah','Aqidah'], ['Feqah','Feqah'], ['Tasauf','Tasauf'], ['Hadith/Sirah','Hadith/Sirah'], ['Tafsir Quran', 'Tafsir Quran'], ['Umum','Umum']]))  %><br><br><br>
+          </div>
+
+          <div class="field">
+            <%= s.label :tarikh %><br>
+            <%= s.text_field :tarikh, id: "program_masjid_tarikh" %><br><br><br>
+          </div>
+
+		  <div class="field">
+		    <%= s.label :lokasi %><br />
+		    <%= s.text_field :location %>
+		  </div>
+		  <br>
+		  
+
+		  <div class="actions"><%= s.submit "Search", class: "pure-button pure-button-primary" %></div>
+
+		<% end %>
+    </div>
+</div>

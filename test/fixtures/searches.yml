@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  npenceramah: MyString
+  tajuk: MyString
+  kitab: MyString
+  tarikh: 2016-02-04
+  location: MyString
+
+two:
+  npenceramah: MyString
+  tajuk: MyString
+  kitab: MyString
+  tarikh: 2016-02-04
+  location: MyString

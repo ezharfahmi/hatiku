@@ -1,0 +1,28 @@
+<div class="content">
+    <div class="form-basic">
+        <div class="form-title-row">
+            <h1>Search Result</h1>
+        </div>
+
+        <p><%= link_to 'Back', new_search_path %></p>
+
+        <% if @search.search_programs.empty? %>
+
+          <p>No Records Found</p>
+
+        <% else %>          
+
+          <% @search.search_programs.each do |c| %>
+
+            <br>
+            <div class="div">
+
+              <p><%= link_to c.tajuk, c %> by <%= c.npenceramah%></p>
+
+            </div>
+
+          <% end %>
+          
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<center><h3 class="headermessage">Latest Aktiviti</h3></center>
+<% @program.each do |prog| %>
+    <p><%=link_to  prog.tajuk, prog %> by <%=  prog.npenceramah %> </p>
+<% end %>
+<div class="digg_pagination">
+    <%= js_will_paginate @program, :params => { :my_excluded_param => nil } %>
+</div>

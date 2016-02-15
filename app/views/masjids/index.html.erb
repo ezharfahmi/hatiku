@@ -1,0 +1,46 @@
+<div class="content">
+	<h2><center>Jadual Aktiviti <%= current_user.name %></center></h2>
+	<div id="calendar">
+		<h3 id="month">
+	    	<%= link_to "<", date: @date.prev_month %>
+	    	<%= @date.strftime("%B %Y") %>
+	    	<%= link_to ">", date: @date.next_month %>
+		</h3>
+	  	<%= calendar @date do |date| %>
+	    	<%= date.day %>
+	    	<% if @program_by_date[date] %> 		
+		      	<ul>
+		        	<% @program_by_date[date].each do |program| %>
+		          		<li><%= link_to program.tajuk, program %> by <%= program.npenceramah %></li>
+		        	<% end %>
+				</ul>		
+	    	<% end %>
+
+	    	<% if @program_by_date_penceramah[date] %>	    		
+		    		<ul>
+		        		<% @program_by_date_penceramah[date].each do |programP| %>
+		          			<li><%= link_to programP.tajuk, programP %> by <%= programP.npenceramah %></li>
+		        		<% end %>
+		        	</ul>    
+	        <% end %>
+
+
+	        <% if @programblabla[date] %>
+	        	<ul>
+			        <% @programblabla[date].each do |prog| %>
+			        	<li><%= link_to prog.tajuk, prog %> by <%= prog.npenceramah %></li>
+			        <% end %>
+			    </ul>
+		    <% end %>
+	  	<% end %>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
