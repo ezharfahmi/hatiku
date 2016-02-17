@@ -1,12 +1,23 @@
 class UsersController < ApplicationController
+	before_action :authenticate_user!
 	def show
-		@user = User.find(params[:id])
-		@program = current_user.masjids.order("tajuk")
-		@program_penceramah = current_user.penceramahs.order("tajuk")
+		@user1 = User.find(params[:id])
+		if current_user.email == @user1.email
+			@user = User.find(params[:id])
+			@program = current_user.masjids.order("tajuk")
+			@program_penceramah = current_user.penceramahs.order("tajuk")
+		else
+			redirect_to current_user
+		end
 	end
 
 	def edit
-		@user = User.find(params[:id])
+		@user1 = User.find(params[:id])
+		if current_user.email == @user1.email
+			@user = User.find(params[:id])
+		else
+			redirect_to current_user, notice: "cannot edit other user" 
+		end
 	end
 
 	def update

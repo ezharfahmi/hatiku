@@ -1,39 +1,49 @@
 <div class="content">
-  <h2>Sign up</h2>
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-
-    <%= f.label :roles %><br />
-    <% for role in User::ROLES %>
-      <%= radio_button_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
-      <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
-    <% end %>
-    <%= hidden_field_tag "user[roles][]", "" %>
-    <br>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+  <div class="form-basic">
+    <div class="form-title-row">
+      <h1>Sign Up</h1>
     </div>
 
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
+        <%= f.label "Roles:" %><br />
+        <% for role in User::ROLES %>
+          <%= radio_button_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
+          <%= label_tag "user_roles_#{role}", role.to_s.humanize %>&nbsp;&nbsp;&nbsp;
+        <% end %>
+        <%= hidden_field_tag "user[roles][]", "" %>
+        <br>
+        <br>
 
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+        <br>
 
-  <%= render "devise/shared/links" %>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+        <br>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+        <br>
+
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+        </div>
+      <% end %>
+      <br>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
 </div>

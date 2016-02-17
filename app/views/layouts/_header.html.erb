@@ -161,7 +161,7 @@
                         </ul>
                       </li>
                     <%else%>
-                      <li><%=link_to 'Sign Up', '#sign_up_modal', "data-toggle" => 'modal'%></li>
+                      <li><%=link_to 'Sign Up', new_user_registration_path %></li>
                       <li><%=link_to 'Login', '#log_in_modal', "data-toggle" =>'modal' %></li>     
                     <%end%>
                 </ul>
@@ -171,3 +171,4 @@
 
       </div>
     </div>
+
